@@ -1,12 +1,16 @@
-server:
-  port: 9011
+# Eureka Client 端配置
 eureka:
   instance:
     hostname: localhost
+#   将自己 ip 注册到 Eureka Server
+    preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://localhost:9001/eureka/
+      defaultZone: "http://username:password@${eureka.instance.hostname}:9001/eureka/,\
+                    http://username:password@${eureka.instance.hostname}:9002/eureka/"
 
 spring:
   application:
     name: eureka-client-01
+server:
+  port: 9011

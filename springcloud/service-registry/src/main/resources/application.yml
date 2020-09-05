@@ -1,4 +1,8 @@
-#spring:
+spring:
+  security:
+    user:
+      name: username
+      password: password
 #  profiles:
 #    active: eureka-server-01
 
@@ -13,7 +17,9 @@ eureka:
     healthcheck:
       enabled: true
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:9001/eureka/,http://${eureka.instance.hostname}:9002/eureka/
+#     需要身份验证, 帐号和密码
+      defaultZone: "http://username:password@${eureka.instance.hostname}:9001/eureka/,\
+                    http://username:password@${eureka.instance.hostname}:9002/eureka/"
 
 ---
 spring:
