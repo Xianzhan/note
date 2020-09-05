@@ -1,4 +1,4 @@
-description '服务注册与发现 01'
+description '服务注册与发现'
 
 dependencies {
     compile group: 'org.glassfish.jaxb', name: 'jaxb-runtime'

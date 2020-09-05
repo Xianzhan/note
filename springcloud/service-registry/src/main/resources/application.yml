@@ -1,0 +1,38 @@
+#spring:
+#  profiles:
+#    active: eureka-server-01
+
+# Eureka Server 端配置
+eureka:
+#  instance:
+#    hostname: localhost
+  client:
+#    单例时需要下面两个配置, 但不是高可用的
+#    registerWithEureka: false
+#    fetchRegistry: false
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://${eureka.instance.hostname}:9001/eureka/,http://${eureka.instance.hostname}:9002/eureka/
+
+---
+spring:
+  profiles: eureka-server-01
+  application:
+    name: eurka-server-01
+server:
+  port: 9001
+eureka:
+  instance:
+    hostname: localhost
+
+---
+spring:
+  profiles: eureka-server-02
+  application:
+    name: eurka-server-02
+server:
+  port: 9002
+eureka:
+  instance:
+    hostname: localhost
