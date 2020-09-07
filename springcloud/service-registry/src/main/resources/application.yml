@@ -25,7 +25,7 @@ eureka:
 spring:
   profiles: eureka-server-01
   application:
-    name: eurka-server-01
+    name: eureka-server
 server:
   port: 9001
 eureka:
@@ -36,7 +36,7 @@ eureka:
 spring:
   profiles: eureka-server-02
   application:
-    name: eurka-server-02
+    name: eureka-server
 server:
   port: 9002
 eureka:
