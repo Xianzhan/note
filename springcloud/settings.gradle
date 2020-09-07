@@ -4,4 +4,5 @@ rootProject.name = 'springcloud'
 include 'service-registry'
 
 include 'service-provider-01'
+include 'service-consumer-01'
 

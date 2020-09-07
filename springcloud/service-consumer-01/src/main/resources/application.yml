@@ -2,7 +2,7 @@
 eureka:
   instance:
     hostname: localhost
-#   将自己 ip 注册到 Eureka Server
+    #   将自己 ip 注册到 Eureka Server
     preferIpAddress: true
   client:
     serviceUrl:
@@ -11,6 +11,6 @@ eureka:
 
 spring:
   application:
-    name: eureka-client-provider
+    name: eureka-client-consumer
 server:
-  port: 9011
+  port: 9021
