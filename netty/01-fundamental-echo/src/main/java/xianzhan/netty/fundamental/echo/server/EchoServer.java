@@ -1,4 +1,4 @@
-package xianzhan.netty.demo.echo;
+package xianzhan.netty.fundamental.echo.server;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
@@ -37,7 +37,6 @@ public class EchoServer {
         // Configure the server
         EventLoopGroup bossGroup = new NioEventLoopGroup(1);
         EventLoopGroup workerGroup = new NioEventLoopGroup();
-        final EchoServerHandler serverHandler = new EchoServerHandler();
         try {
             ServerBootstrap b = new ServerBootstrap();
             b.group(bossGroup, workerGroup)
@@ -52,11 +51,11 @@ public class EchoServer {
                                 p.addLast(sslCtx.newHandler(ch.alloc()));
                             }
                             // p.addLast(new LoggingHandler(LogLevel.INFO));
-                            p.addLast(serverHandler);
+                            p.addLast(new EchoServerHandler());
                         }
                     });
 
-            /// Start the server.
+            // Start the server.
             ChannelFuture f = b.bind(PORT).sync();
 
             // Wait until the server socket is closed.

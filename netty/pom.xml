@@ -10,10 +10,14 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <netty.version>4.1.51.Final</netty.version>
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
+        <netty.version>4.1.74.Final</netty.version>
     </properties>
 
     <modules>
-        <module>demo</module>
+        <module>01-fundamental-echo</module>
     </modules>
 </project>

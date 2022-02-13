@@ -1,4 +1,4 @@
-package xianzhan.netty.demo.echo;
+package xianzhan.netty.fundamental.echo.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
