@@ -29,14 +29,9 @@ public class JdbcConfig implements TransactionManagementConfigurer {
     }
 
     @Bean
-    public PlatformTransactionManager txManager() {
-        return new DataSourceTransactionManager(dataSource());
-    }
-
     @Override
-    @Bean
     public PlatformTransactionManager annotationDrivenTransactionManager() {
-        return txManager();
+        return new DataSourceTransactionManager(dataSource());
     }
 
     @Bean
