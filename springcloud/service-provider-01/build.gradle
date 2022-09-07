@@ -1,7 +1,0 @@
-description '服务提供者 01'
-
-dependencies {
-    compile("org.springframework.cloud:spring-cloud-starter-netflix-eureka-client")
-
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-}

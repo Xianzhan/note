@@ -1,8 +1,0 @@
-rootProject.name = 'springcloud'
-
-// 服务注册与发现, 可根据传入参数使用各类配置, 实现高可用注册中心
-include 'service-registry'
-
-include 'service-provider-01'
-include 'service-consumer-01'
-
