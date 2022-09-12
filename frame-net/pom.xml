@@ -10,9 +10,9 @@
         <groupId>xianzhan.frame</groupId>
         <version>1.0</version>
     </parent>
-    <artifactId>frame-log</artifactId>
+    <artifactId>frame-net</artifactId>
 
     <modules>
-        <module>slf4j</module>
+        <module>netty</module>
     </modules>
 </project>

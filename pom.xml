@@ -26,6 +26,8 @@
 
     <modules>
         <module>frame-log</module>
+        <module>frame-net</module>
+        <module>frame-base</module>
     </modules>
 
     <dependencies>

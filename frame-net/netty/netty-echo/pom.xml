@@ -3,16 +3,20 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
 
     <parent>
-        <artifactId>frame</artifactId>
+        <artifactId>netty</artifactId>
         <groupId>xianzhan.frame</groupId>
         <version>1.0</version>
     </parent>
-    <artifactId>frame-log</artifactId>
+    <artifactId>netty-echo</artifactId>
 
-    <modules>
-        <module>slf4j</module>
-    </modules>
+    <dependencies>
+        <dependency>
+            <groupId>xianzhan.frame</groupId>
+            <artifactId>netty-base</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>
