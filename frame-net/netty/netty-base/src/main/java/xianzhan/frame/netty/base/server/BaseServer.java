@@ -35,6 +35,11 @@ public abstract class BaseServer {
             // 设置线程组
             b.group(bossGroup, workerGroup)
                     // 配置 server channel 处理 accept 事件/io.netty.channel.socket.ServerSocketChannel
+                    // |Common	               |Linux	                 |Mac
+                    // |NioEventLoopGroup	   |EpollEventLoopGroup	     |KQueueEventLoopGroup
+                    // |NioEventLoop	       |EpollEventLoop	         |KQueueEventLoop
+                    // |NioServerSocketChannel |EpollServerSocketChannel |KQueueServerSocketChannel
+                    // |NioSocketChannel	   |EpollSocketChannel	     |KQueueSocketChannel
                     .channel(NioServerSocketChannel.class)
                     // ====== Netty 参数 ======
                     //
@@ -77,9 +82,13 @@ public abstract class BaseServer {
                     // TCP_NODELAY: 用于启用或关闭 Nagle 算法.
                     //              Netty 默认为 true, 关闭缓存立即发送数据提高实时性.
                     .option(ChannelOption.SO_BACKLOG, 128)
+                    // 设置服务端的 handler
                     .handler(new LoggingHandler(LogLevel.INFO))
+                    // 设置客户端的 handler
                     .childHandler(new ChannelInitializer<SocketChannel>() {
-
+                        // ChannelInitializer 是用于当 SocketChannel 成功注册到绑定的 Reactor 上后，
+                        // 用于初始化该 SocketChannel 的 Pipeline。
+                        // 它的 initChannel 方法会在注册成功后执行。
                         @Override
                         protected void initChannel(SocketChannel ch) throws Exception {
                             ChannelPipeline p = ch.pipeline();
@@ -89,9 +98,9 @@ public abstract class BaseServer {
                         }
                     });
 
-            // 启动服务
+            // 绑定端口地址，开始监听客户端事件（OP_ACCEPT）
             ChannelFuture f = b.bind(port).sync();
-            // 等待服务 socket 关闭
+            // 等待服务 NioServerSocketChannel 关闭
             f.channel().closeFuture().sync();
         } finally {
             // 关闭所有事件循环以终止所有线程
