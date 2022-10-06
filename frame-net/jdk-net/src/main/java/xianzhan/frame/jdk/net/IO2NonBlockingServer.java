@@ -1,5 +1,7 @@
 package xianzhan.frame.jdk.net;
 
+import xianzhan.frame.jdk.net.util.IOUtil;
+
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.ByteBuffer;
@@ -40,19 +42,7 @@ public class IO2NonBlockingServer {
             var req = new String(buff.array(), StandardCharsets.UTF_8);
             System.out.println(req);
 
-            var message = "Hello world";
-            // https://zh.wikipedia.org/wiki/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE
-            var response = """
-                HTTP/1.1 200 OK
-                Server: %s
-                Content-Type: text/html; charset=utf-8
-                Content-Length: %d
-                                       
-                %s
-                """.formatted(IO1BlockingServer.class.getSimpleName(),
-                    message.getBytes(StandardCharsets.UTF_8).length,
-                    message);
-            var responseBytes = response.getBytes(StandardCharsets.UTF_8);
+            var responseBytes = IOUtil.responseByte(IO2NonBlockingServer.class);
             buff = ByteBuffer.wrap(responseBytes);
 
             socketChannel.write(buff);
