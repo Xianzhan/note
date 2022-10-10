@@ -29,6 +29,7 @@
         <module>frame-net</module>
         <module>frame-base</module>
         <module>frame-benchmarks</module>
+        <module>frame-concurrent</module>
     </modules>
 
     <dependencies>
