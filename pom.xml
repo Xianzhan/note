@@ -30,6 +30,7 @@
         <module>frame-base</module>
         <module>frame-benchmarks</module>
         <module>frame-concurrent</module>
+        <module>frame-spring</module>
     </modules>
 
     <dependencies>
