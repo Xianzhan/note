@@ -16,4 +16,8 @@ public class B {
     public B() {
         System.out.println("B constructor");
     }
+
+    public A getA() {
+        return a;
+    }
 }
