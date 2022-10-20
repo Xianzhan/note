@@ -16,8 +16,7 @@ public class CircularTest {
     @Test
     public void testCircular() {
         String[] basePackages = new String[]{
-                "xianzhan.frame.spring.base.bean",
-                "xianzhan.frame.spring.base.circular"
+                "xianzhan.frame.spring.base.bean"
         };
         ApplicationContext context = new AnnotationConfigApplicationContext(basePackages);
 
