@@ -1,7 +1,8 @@
-package xianzhan.frame.spring.base.circular;
+package xianzhan.frame.spring.base.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import xianzhan.frame.spring.base.bean.A;
 
 /**
  * @author xianzhan

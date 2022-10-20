@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import xianzhan.frame.spring.base.bean.A;
+import xianzhan.frame.spring.base.bean.B;
 
 /**
  * @author xianzhan
@@ -13,7 +15,10 @@ public class CircularTest {
 
     @Test
     public void testCircular() {
-        String basePackages = "xianzhan.frame.spring.base.circular";
+        String[] basePackages = new String[]{
+                "xianzhan.frame.spring.base.bean",
+                "xianzhan.frame.spring.base.circular"
+        };
         ApplicationContext context = new AnnotationConfigApplicationContext(basePackages);
 
         A beanA = context.getBean(A.class);
