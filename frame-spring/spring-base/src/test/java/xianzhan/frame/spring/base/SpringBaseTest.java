@@ -1,4 +1,4 @@
-package xianzhan.frame.spring.base.circular;
+package xianzhan.frame.spring.base;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -8,17 +8,31 @@ import xianzhan.frame.spring.base.bean.A;
 import xianzhan.frame.spring.base.bean.B;
 
 /**
+ * Spring 功能测试
+ *
  * @author xianzhan
- * @since 2022-10-10
+ * @since 2022-10-20
  */
-public class CircularTest {
+public class SpringBaseTest {
 
+    private static final String BEAN = "xianzhan.frame.spring.base.bean";
+
+    /**
+     * 依赖注入测试
+     */
+    @Test
+    public void testDependInject() {
+        var context = new AnnotationConfigApplicationContext(BEAN);
+        A a = context.getBean(A.class);
+        Assertions.assertNotNull(a);
+    }
+
+    /**
+     * 循环依赖测试
+     */
     @Test
     public void testCircular() {
-        String[] basePackages = new String[]{
-                "xianzhan.frame.spring.base.bean"
-        };
-        ApplicationContext context = new AnnotationConfigApplicationContext(basePackages);
+        ApplicationContext context = new AnnotationConfigApplicationContext(BEAN);
 
         A beanA = context.getBean(A.class);
         B beanB = context.getBean(B.class);
