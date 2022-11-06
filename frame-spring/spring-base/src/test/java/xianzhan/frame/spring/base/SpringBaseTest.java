@@ -4,8 +4,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import xianzhan.frame.spring.base.bean.A;
-import xianzhan.frame.spring.base.bean.B;
+import xianzhan.frame.spring.base.bean.IA;
+import xianzhan.frame.spring.base.bean.IB;
 
 /**
  * Spring 功能测试
@@ -23,7 +23,7 @@ public class SpringBaseTest {
     @Test
     public void testDependInject() {
         var context = new AnnotationConfigApplicationContext(BEAN);
-        A a = context.getBean(A.class);
+        IA a = context.getBean(IA.class);
         Assertions.assertNotNull(a);
     }
 
@@ -34,8 +34,8 @@ public class SpringBaseTest {
     public void testCircular() {
         ApplicationContext context = new AnnotationConfigApplicationContext(BEAN);
 
-        A beanA = context.getBean(A.class);
-        B beanB = context.getBean(B.class);
+        IA beanA = context.getBean(IA.class);
+        IB beanB = context.getBean(IB.class);
 
         Assertions.assertEquals(beanA, beanB.getA());
         Assertions.assertEquals(beanB, beanA.getB());
