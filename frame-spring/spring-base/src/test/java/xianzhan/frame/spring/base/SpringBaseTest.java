@@ -1,11 +1,16 @@
 package xianzhan.frame.spring.base;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import xianzhan.frame.spring.base.bean.IA;
 import xianzhan.frame.spring.base.bean.IB;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Supplier;
 
 /**
  * Spring 功能测试
@@ -15,14 +20,28 @@ import xianzhan.frame.spring.base.bean.IB;
  */
 public class SpringBaseTest {
 
-    private static final String BEAN = "xianzhan.frame.spring.base.bean";
+    static String basePackage = "xianzhan.frame.spring.base.";
+
+    protected AnnotationConfigApplicationContext context;
+
+    public void getPackage(List<String> basePackages) {
+
+    }
+
+    @BeforeEach
+    public void beforeAll() {
+        var basePackages = new ArrayList<String>();
+        basePackages.add(basePackage + "bean");
+        getPackage(basePackages);
+
+        context = new AnnotationConfigApplicationContext(basePackages.toArray(new String[0]));
+    }
 
     /**
      * 依赖注入测试
      */
     @Test
     public void testDependInject() {
-        var context = new AnnotationConfigApplicationContext(BEAN);
         IA a = context.getBean(IA.class);
         Assertions.assertNotNull(a);
     }
@@ -32,8 +51,6 @@ public class SpringBaseTest {
      */
     @Test
     public void testCircular() {
-        ApplicationContext context = new AnnotationConfigApplicationContext(BEAN);
-
         IA beanA = context.getBean(IA.class);
         IB beanB = context.getBean(IB.class);
 
