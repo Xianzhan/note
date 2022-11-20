@@ -15,6 +15,10 @@ public class CImpl implements IC {
     @Autowired
     private IA a;
 
+    public CImpl() {
+        System.out.println("CImpl");
+    }
+
     @Override
     public void serviceC() {
         System.out.println("serviceC");
