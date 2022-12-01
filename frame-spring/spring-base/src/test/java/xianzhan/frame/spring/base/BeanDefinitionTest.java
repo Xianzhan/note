@@ -4,7 +4,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.AnnotatedGenericBeanDefinition;
 import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.config.BeanDefinitionCustomizer;
 import xianzhan.frame.spring.base.bean.impl.AImpl;
+
+import java.util.function.Supplier;
 
 /**
  * @author xianzhan
@@ -12,6 +15,14 @@ import xianzhan.frame.spring.base.bean.impl.AImpl;
  */
 public class BeanDefinitionTest {
 
+    /**
+     * BeanDefinition 创建流程
+     *
+     * @see org.springframework.context.annotation.AnnotationConfigApplicationContext#register(Class[])
+     * @see org.springframework.context.annotation.AnnotatedBeanDefinitionReader#register(Class[])
+     * @see org.springframework.context.annotation.AnnotatedBeanDefinitionReader#registerBean(Class)
+     * @see org.springframework.context.annotation.AnnotatedBeanDefinitionReader#doRegisterBean(Class, String, Class[], Supplier, BeanDefinitionCustomizer[])
+     */
     @Test
     public void testAnnotatedGenericAImpl() {
         BeanDefinition bd = new AnnotatedGenericBeanDefinition(AImpl.class);
