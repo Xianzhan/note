@@ -32,6 +32,7 @@
         <module>frame-concurrent</module>
         <module>frame-spring</module>
         <module>frame-json</module>
+        <module>frame-ui</module>
     </modules>
 
     <dependencies>
