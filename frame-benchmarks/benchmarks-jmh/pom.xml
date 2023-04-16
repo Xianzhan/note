@@ -3,33 +3,29 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <packaging>pom</packaging>
-    <modules>
-        <module>netty-base</module>
-        <module>netty-echo</module>
-    </modules>
+    <packaging>jar</packaging>
 
     <parent>
-        <artifactId>frame-net</artifactId>
+        <artifactId>frame-benchmarks</artifactId>
         <groupId>xianzhan.frame</groupId>
         <version>1.0</version>
     </parent>
-    <artifactId>netty</artifactId>
+    <artifactId>benchmarks-jmh</artifactId>
 
     <properties>
-        <netty-all.version>4.1.81.Final</netty-all.version>
+        <jmh.version>1.35</jmh.version>
     </properties>
 
     <dependencies>
         <dependency>
-            <groupId>xianzhan.frame</groupId>
-            <artifactId>frame-base</artifactId>
-            <version>1.0</version>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-core</artifactId>
+            <version>${jmh.version}</version>
         </dependency>
         <dependency>
-            <groupId>io.netty</groupId>
-            <artifactId>netty-all</artifactId>
-            <version>${netty-all.version}</version>
+            <groupId>org.openjdk.jmh</groupId>
+            <artifactId>jmh-generator-annprocess</artifactId>
+            <version>${jmh.version}</version>
         </dependency>
     </dependencies>
 </project>

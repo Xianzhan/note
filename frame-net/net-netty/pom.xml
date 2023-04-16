@@ -6,9 +6,9 @@
     <packaging>jar</packaging>
 
     <parent>
-        <artifactId>frame-concurrent</artifactId>
         <groupId>xianzhan.frame</groupId>
+        <artifactId>frame-net</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>jdk-concurrent</artifactId>
+    <artifactId>net-netty</artifactId>
 </project>

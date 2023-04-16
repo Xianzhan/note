@@ -13,7 +13,7 @@
     <artifactId>frame-net</artifactId>
 
     <modules>
-        <module>netty</module>
-        <module>jdk-net</module>
+        <module>net-jdk</module>
+        <module>net-netty</module>
     </modules>
 </project>

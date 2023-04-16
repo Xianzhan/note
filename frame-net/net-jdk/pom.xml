@@ -6,18 +6,9 @@
     <packaging>jar</packaging>
 
     <parent>
-        <artifactId>slf4j</artifactId>
+        <artifactId>frame-net</artifactId>
         <groupId>xianzhan.frame</groupId>
         <version>1.0</version>
     </parent>
-    <artifactId>slf4j-logback</artifactId>
-
-    <dependencies>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback-classic.version}</version>
-        </dependency>
-
-    </dependencies>
+    <artifactId>net-jdk</artifactId>
 </project>

@@ -13,6 +13,6 @@
     <artifactId>frame-concurrent</artifactId>
 
     <modules>
-        <module>jdk-concurrent</module>
+        <module>concurrent-jdk</module>
     </modules>
 </project>

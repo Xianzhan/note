@@ -6,17 +6,18 @@
     <packaging>jar</packaging>
 
     <parent>
-        <artifactId>netty</artifactId>
         <groupId>xianzhan.frame</groupId>
+        <artifactId>frame-log</artifactId>
         <version>1.0</version>
     </parent>
-    <artifactId>netty-echo</artifactId>
+    <artifactId>log-slf4j-logback</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>xianzhan.frame</groupId>
-            <artifactId>netty-base</artifactId>
-            <version>1.0</version>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${logback-classic.version}</version>
         </dependency>
+
     </dependencies>
 </project>
