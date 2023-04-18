@@ -33,6 +33,7 @@
         <module>frame-spring</module>
         <module>frame-json</module>
         <module>frame-ui</module>
+        <module>frame-ffi</module>
     </modules>
 
     <dependencies>
