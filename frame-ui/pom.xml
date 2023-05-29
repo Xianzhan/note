@@ -5,9 +5,6 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
-    <modules>
-        <module>ui-swing</module>
-    </modules>
 
     <parent>
         <groupId>xianzhan.frame</groupId>
@@ -15,4 +12,13 @@
         <version>1.0</version>
     </parent>
     <artifactId>frame-ui</artifactId>
+
+    <modules>
+        <module>ui-swing</module>
+        <module>ui-fx</module>
+    </modules>
+
+    <properties>
+        <javafx.version>20</javafx.version>
+    </properties>
 </project>
