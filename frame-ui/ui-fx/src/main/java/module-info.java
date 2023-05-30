@@ -6,5 +6,7 @@
  */
 module ui.fx {
     requires javafx.graphics;
+    requires javafx.controls;
+
     exports xianzhan.frame.ui.fx;
 }

@@ -27,7 +27,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
                 <configuration>
-<!--                    <mainClass>xianzhan.frame.ui.fx.FxApplication</mainClass>-->
+                    <mainClass>xianzhan.frame.ui.fx.FxApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>
