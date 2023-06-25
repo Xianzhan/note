@@ -20,6 +20,8 @@
         <!-- https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html -->
         <maven.compiler.release>20</maven.compiler.release>
 
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+
         <lombok.version>1.18.24</lombok.version>
         <junit.version>5.9.0</junit.version>
 

@@ -1,4 +1,4 @@
-package xianzhan.frame.jdk.concurrent;
+package xianzhan.frame.concurrent.jdk;
 
 public class VTMain {
 
