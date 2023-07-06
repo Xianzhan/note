@@ -11,6 +11,8 @@ import java.lang.annotation.RetentionPolicy;
  * 自定义注解，必须有 @JacksonAnnotationsInside
  *
  * @author xianzhan
+ * @see JacksonAnnotationsInside
+ * @see IntToBinarySer
  * @since 2023-07-06
  */
 @JacksonAnnotationsInside

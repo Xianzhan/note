@@ -1,10 +1,12 @@
 package xianzhan.frame.json.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.AnnotationIntrospector;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.fasterxml.jackson.databind.type.MapType;
+import xianzhan.frame.json.jackson.introspector.MaskingIntrospector;
 
 import java.text.SimpleDateFormat;
 import java.util.List;
@@ -35,6 +37,11 @@ public class JacksonUtil {
         // 禁用 timestamp
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
+
+        // 自定义注解拦截
+        var pair = AnnotationIntrospector.pair(objectMapper.getSerializationConfig()
+                .getAnnotationIntrospector(), new MaskingIntrospector());
+        objectMapper.setAnnotationIntrospector(pair);
 
         return objectMapper;
     }
