@@ -2,6 +2,7 @@ package xianzhan.frame.json.jackson.pojo;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
+import xianzhan.frame.json.jackson.annotation.IntToBin;
 import xianzhan.frame.json.jackson.ser.IntToBinarySer;
 
 /**
@@ -13,4 +14,7 @@ public class IntToBinary {
 
     @JsonSerialize(using = IntToBinarySer.class)
     private Integer num;
+
+    @IntToBin
+    private Integer num2;
 }

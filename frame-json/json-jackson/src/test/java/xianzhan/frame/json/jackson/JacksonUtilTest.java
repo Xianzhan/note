@@ -90,7 +90,8 @@ public class JacksonUtilTest {
     public void testJsonSerializer() {
         IntToBinary tb = new IntToBinary();
         tb.setNum(256);
+        tb.setNum2(256);
         Assertions.assertEquals("""
-                {"num":"100000000"}""", JacksonUtil.toJson(tb));
+                {"num":"100000000","num2":"100000000"}""", JacksonUtil.toJson(tb));
     }
 }
