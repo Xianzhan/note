@@ -2,7 +2,9 @@ package xianzhan.frame.json.jackson;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import xianzhan.frame.base.util.I18NUtil;
 import xianzhan.frame.json.jackson.pojo.IntToBinary;
+import xianzhan.frame.json.jackson.pojo.Response;
 import xianzhan.frame.json.jackson.pojo.Student;
 
 import java.text.ParseException;
@@ -11,6 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -94,5 +97,19 @@ public class JacksonUtilTest {
         tb.setBinString("100000000");
         Assertions.assertEquals("""
                 {"num":"100000000","num2":"100000000","binString":"100***000"}""", JacksonUtil.toJson(tb));
+    }
+
+    @Test
+    public void testI18N() {
+        Response response = new Response();
+        response.setCode(0);
+        response.setMessage("成功");
+
+        Assertions.assertEquals("""
+                {"code":0,"message":"成功"}""", JacksonUtil.toJson(response));
+
+        I18NUtil.setHolder(Locale.ENGLISH);
+        Assertions.assertEquals("""
+                {"code":0,"message":"success"}""", JacksonUtil.toJson(response));
     }
 }
