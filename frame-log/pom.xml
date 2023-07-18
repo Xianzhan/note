@@ -12,11 +12,6 @@
     </parent>
     <artifactId>frame-log</artifactId>
 
-    <properties>
-        <slf4j-api.version>2.0.0</slf4j-api.version>
-        <logback-classic.version>1.4.0</logback-classic.version>
-    </properties>
-
     <modules>
         <module>log-slf4j-logback</module>
     </modules>
