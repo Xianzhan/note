@@ -14,8 +14,8 @@
     <artifactId>frame-ui</artifactId>
 
     <modules>
+        <module>ui-awt</module>
         <module>ui-swing</module>
-        <module>ui-fx</module>
     </modules>
 
     <properties>
