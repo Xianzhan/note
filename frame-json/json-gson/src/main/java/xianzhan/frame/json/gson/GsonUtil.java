@@ -2,6 +2,7 @@ package xianzhan.frame.json.gson;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 
 /**
  * @author xianzhan
@@ -26,5 +27,15 @@ public class GsonUtil {
 
     public static <T> T toObj(String json, Class<T> clazz) {
         return GSON.fromJson(json, clazz);
+    }
+
+    /**
+     * @param json      json 字符串
+     * @param typeToken 泛型类型 token
+     * @param <T>       泛型
+     * @return 泛型实例
+     */
+    public static <T> T toObj(String json, TypeToken<T> typeToken) {
+        return GSON.fromJson(json, typeToken.getType());
     }
 }
