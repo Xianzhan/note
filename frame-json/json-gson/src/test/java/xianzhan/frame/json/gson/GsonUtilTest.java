@@ -8,6 +8,8 @@ import xianzhan.frame.json.gson.pojo.Student;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author xianzhan
@@ -64,5 +66,42 @@ public class GsonUtilTest {
         Student data = response.getData();
         Assertions.assertEquals("mike", data.getName());
         Assertions.assertEquals(10, data.getAge());
+
+        json = """
+                {
+                    "1":1,
+                    "2":2,
+                    "3":3
+                }""";
+        Map<String, Integer> map = GsonUtil.toObj(json, new TypeToken<>() {
+        });
+        Assertions.assertEquals(1, map.get("1"));
+        Assertions.assertEquals(2, map.get("2"));
+        Assertions.assertEquals(3, map.get("3"));
+        Assertions.assertNull(map.get("4"));
+
+        json = """
+                [
+                    {
+                        "name":"name1",
+                        "age":1
+                    },
+                    {
+                        "name":"name2",
+                        "age":2
+                    },
+                    {
+                        "name":"name3",
+                        "age":3
+                    }
+                ]""";
+        List<Student> list = GsonUtil.toObj(json, new TypeToken<>() {
+        });
+        Assertions.assertEquals(3, list.size());
+        Assertions.assertEquals("name1", list.get(0).getName());
+        Assertions.assertEquals(2, list.get(1).getAge());
+        Assertions.assertEquals("name3", list.get(2).getName());
+        Assertions.assertEquals(3, list.get(2).getAge());
+        Assertions.assertNull(list.get(2).getBirthday());
     }
 }
