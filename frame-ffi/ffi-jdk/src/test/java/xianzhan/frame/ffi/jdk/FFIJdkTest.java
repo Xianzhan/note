@@ -28,7 +28,7 @@ public class FFIJdkTest {
      */
     @Test
     public void testAllocateStruct() {
-        try (Arena arena = Arena.openConfined()) {
+        try (Arena arena = Arena.ofConfined()) {
             MemorySegment point = arena.allocate(Double.BYTES * 2);
             point.set(ValueLayout.JAVA_DOUBLE, 0, 3.0);
             point.set(ValueLayout.JAVA_DOUBLE, 8, 4.0);
@@ -56,7 +56,7 @@ public class FFIJdkTest {
         VarHandle xHandle = point2dStruct.varHandle(MemoryLayout.PathElement.groupElement("x"));
         VarHandle yHandle = point2dStruct.varHandle(MemoryLayout.PathElement.groupElement("y"));
 
-        try (Arena arena = Arena.openConfined()) {
+        try (Arena arena = Arena.ofConfined()) {
             MemorySegment point = arena.allocate(point2dStruct);
             xHandle.set(point, 3.0);
             yHandle.set(point, 4.0);
