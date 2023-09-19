@@ -11,21 +11,4 @@
         <version>1.0</version>
     </parent>
     <artifactId>concurrent-jdk</artifactId>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>${maven-compiler-plugin.version}</version>
-                <configuration>
-                    <!-- fix: java: 找不到模块: jdk.incubator.concurrent -->
-                    <compilerArgs combine.children="append">
-                        <arg>--enable-preview</arg>
-                        <arg>--add-modules=jdk.incubator.concurrent</arg>
-                    </compilerArgs>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
 </project>
