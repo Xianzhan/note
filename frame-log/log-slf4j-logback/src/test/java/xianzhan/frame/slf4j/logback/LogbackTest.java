@@ -1,14 +1,18 @@
 package xianzhan.frame.slf4j.logback;
 
-import lombok.extern.slf4j.Slf4j;
+//import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 
 import java.util.UUID;
 
-@Slf4j
+//@Slf4j
 public class LogbackTest {
+
+    private static final Logger log = LoggerFactory.getLogger(LogbackTest.class);
 
     @BeforeEach
     public void beforeEach() {
