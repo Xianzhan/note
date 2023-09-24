@@ -45,4 +45,16 @@ public class StrUtilTest {
         Assertions.assertEquals(26, StrUtil.indexOfKmp(str, "Peters"));
         Assertions.assertEquals(33, StrUtil.indexOfKmp(str, "Beautiful"));
     }
+
+    @Test
+    public void testStr() {
+        var i = 10;
+        var s = "abc";
+        var str = STR. "i: \{ i }, s: \{ s }" ;
+        Assertions.assertEquals("i: 10, s: abc", str);
+
+        str = STR. """
+                i:\{ i },s:\{ s }""" ;
+        Assertions.assertEquals("i:10,s:abc", str);
+    }
 }
