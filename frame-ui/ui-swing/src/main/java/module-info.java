@@ -4,4 +4,5 @@
  */
 module ui.swing {
     requires java.desktop;
+    requires lombok;
 }
