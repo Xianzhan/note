@@ -1,7 +1,5 @@
 package xianzhan.frame.concurrent.jdk;
 
-import jdk.incubator.concurrent.ScopedValue;
-
 /**
  * <a href="https://www.youtube.com/watch?v=fjvGzBFmyhM">...</a>
  *
