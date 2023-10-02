@@ -12,4 +12,11 @@
     </parent>
     <artifactId>ui-swing</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>xianzhan.frame</groupId>
+            <artifactId>frame-base</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
 </project>

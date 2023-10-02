@@ -3,6 +3,9 @@
  * @since 2023-03-07
  */
 module ui.swing {
+    // fix: java.lang.module.FindException: Module lombok not found
+    requires static lombok;
+
     requires java.desktop;
-    requires lombok;
+    requires org.slf4j;
 }
