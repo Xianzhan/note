@@ -8,4 +8,5 @@ module ui.swing {
 
     requires java.desktop;
     requires org.slf4j;
+    requires frame.base;
 }
