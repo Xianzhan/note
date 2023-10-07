@@ -22,4 +22,8 @@ public class PathUtil {
         }
         return Stream.empty();
     }
+
+    public static Path currentDir() {
+        return Path.of("");
+    }
 }

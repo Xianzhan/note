@@ -1,12 +1,8 @@
 package xianzhan.frame.ui.swing.app;
 
-import java.awt.BorderLayout;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.HeadlessException;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import lombok.extern.slf4j.Slf4j;
+import xianzhan.frame.base.util.PathUtil;
+
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -20,8 +16,13 @@ import javax.swing.UIManager;
 import javax.swing.WindowConstants;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import lombok.extern.slf4j.Slf4j;
-import xianzhan.frame.base.util.PathUtil;
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Dimension;
+import java.awt.GridLayout;
+import java.awt.HeadlessException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * 资源管理器
@@ -69,10 +70,10 @@ public final class Explorer extends JPanel {
 
             var split = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, p, new JPanel());
             split.setResizeWeight(.5);
-            split.setDividerLocation(160);
+            split.setDividerLocation(320);
 
             add(split);
-            setPreferredSize(new Dimension(320, 240));
+            setPreferredSize(new Dimension(960, 720));
         }
 
         private Component treeTitle(Component view) {
@@ -86,11 +87,11 @@ public final class Explorer extends JPanel {
         }
 
         private DefaultMutableTreeNode treeNode() {
-            return tree(".");
+            return tree(PathUtil.currentDir().toAbsolutePath().toString());
         }
 
         private DefaultMutableTreeNode tree(String dir) {
-            DefaultMutableTreeNode root = new DefaultMutableTreeNode(Path.of(dir).toAbsolutePath());
+            DefaultMutableTreeNode root = new DefaultMutableTreeNode(Path.of(dir).getFileName());
             PathUtil.list(dir)
                     .map(path -> {
                         DefaultMutableTreeNode tn;
