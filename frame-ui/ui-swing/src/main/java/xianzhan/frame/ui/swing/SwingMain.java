@@ -1,9 +1,9 @@
 package xianzhan.frame.ui.swing;
 
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import lombok.extern.slf4j.Slf4j;
+import xianzhan.frame.ui.swing.base.MainJFrame;
+
+import javax.swing.SwingUtilities;
 
 /**
  * <pre>
@@ -25,23 +25,16 @@ import javax.swing.JPanel;
  * @author xianzhan
  * @since 2023-03-07
  */
+@Slf4j
 public class SwingMain {
 
     public static void main(String[] args) {
-        var frame = new JFrame("frame");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(500, 400);
 
-        var panel = new JPanel();
-        frame.add(panel);
-
-        var label = new JLabel("label");
-        panel.add(label);
-
-        var button = new JButton("button");
-        button.addActionListener(actionEvent -> label.setText("你点击了按钮~"));
-        panel.add(button);
-
-        frame.setVisible(true);
+        try {
+            SwingUtilities.invokeAndWait(new MainJFrame());
+            log.info("SwingMain - main: 启动完成.");
+        } catch (Exception e) {
+            log.error("SwingMain - main: 启动异常.", e);
+        }
     }
 }
