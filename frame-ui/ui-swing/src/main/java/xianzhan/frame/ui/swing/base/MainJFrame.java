@@ -1,7 +1,6 @@
 package xianzhan.frame.ui.swing.base;
 
 import javax.swing.JFrame;
-import java.awt.HeadlessException;
 
 /**
  * @author xianzhan
@@ -12,10 +11,6 @@ public class MainJFrame extends JFrame implements Runnable {
     private static final int MAIN_WIDTH  = 960;
     private static final int MAIN_HEIGHT = 640;
 
-    public MainJFrame() throws HeadlessException {
-        super("主窗口");
-    }
-
     /**
      * 窗口居中
      */
@@ -25,12 +20,12 @@ public class MainJFrame extends JFrame implements Runnable {
 
     @Override
     public void run() {
-        var frame = new MainJFrame();
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(MAIN_WIDTH, MAIN_HEIGHT);
+        setTitle("主窗口");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(MAIN_WIDTH, MAIN_HEIGHT);
 
-        frame.center();
+        center();
 
-        frame.setVisible(true);
+        setVisible(true);
     }
 }
