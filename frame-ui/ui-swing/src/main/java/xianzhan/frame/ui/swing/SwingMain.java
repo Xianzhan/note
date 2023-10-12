@@ -6,22 +6,6 @@ import xianzhan.frame.ui.swing.base.MainJFrame;
 import javax.swing.SwingUtilities;
 
 /**
- * <pre>
- * Object
- * +-----------------------------------------+
- * |                                         |
- * Container                                 AWT Components...
- * +-------+--------------------+
- * |       |                    |
- * Panel   Window               JComponent
- * |       +----------+         +---------+----------------+--------+--------------+
- * |       |          |         |         |                |        |              |
- * Applet  Frame      Dialog    JLable    JAastractButton  JPanel   JTextComponent JScrollPane
- * |       |          |         +------------+             +-----------+
- * |       |          |         |            |             |           |
- * JApplet JFrame     JDialog   JButton      JToggleButton JTextField  JTextArea
- * </pre>
- *
  * @author xianzhan
  * @since 2023-03-07
  */
