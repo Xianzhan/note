@@ -18,3 +18,9 @@ Applet  Frame      Dialog    JLable    JAastractButton  JPanel   JTextComponent 
 |       |          |         |            |             |           |
 JApplet JFrame     JDialog   JButton      JToggleButton JTextField  JTextArea
 ```
+
+# Top-Level Containers
+
+JFrame
+JDialog
+JApplet
