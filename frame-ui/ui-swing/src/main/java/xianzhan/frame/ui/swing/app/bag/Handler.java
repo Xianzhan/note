@@ -24,6 +24,10 @@ public class Handler {
         }
     }
 
+    public List<GameObject> getObjectList() {
+        return objectList;
+    }
+
     public void addObject(GameObject object) {
         objectList.add(object);
     }
