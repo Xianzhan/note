@@ -1,5 +1,7 @@
 package xianzhan.frame.ui.swing.app.bag;
 
+import xianzhan.frame.ui.swing.app.bag.object.GameObject;
+
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.List;

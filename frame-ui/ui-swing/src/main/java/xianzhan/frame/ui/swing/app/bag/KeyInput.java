@@ -1,5 +1,8 @@
 package xianzhan.frame.ui.swing.app.bag;
 
+import xianzhan.frame.ui.swing.app.bag.object.GameObject;
+import xianzhan.frame.ui.swing.app.bag.object.ID;
+
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
@@ -18,8 +21,16 @@ public class KeyInput extends KeyAdapter {
     @Override
     public void keyPressed(KeyEvent e) {
         int keyCode = e.getKeyCode();
+        if (keyCode == KeyEvent.VK_ESCAPE) {
+            System.out.println("Game over");
+            System.exit(1);
+        }
 
         for (GameObject gameObject : handler.getObjectList()) {
+            if (gameObject.getId() != ID.PLAYER) {
+                return;
+            }
+
             switch (keyCode) {
                 case KeyEvent.VK_W -> gameObject.setVelY(-5);
                 case KeyEvent.VK_S -> gameObject.setVelY(5);
@@ -34,6 +45,10 @@ public class KeyInput extends KeyAdapter {
         int keyCode = e.getKeyCode();
 
         for (GameObject gameObject : handler.getObjectList()) {
+            if (gameObject.getId() != ID.PLAYER) {
+                return;
+            }
+
             switch (keyCode) {
                 case KeyEvent.VK_W, KeyEvent.VK_S -> gameObject.setVelY(0);
                 case KeyEvent.VK_A, KeyEvent.VK_D -> gameObject.setVelX(0);

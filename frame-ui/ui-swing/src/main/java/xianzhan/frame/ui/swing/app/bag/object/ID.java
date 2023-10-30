@@ -1,4 +1,4 @@
-package xianzhan.frame.ui.swing.app.bag;
+package xianzhan.frame.ui.swing.app.bag.object;
 
 /**
  * @author xianzhan

@@ -1,6 +1,8 @@
 package xianzhan.frame.ui.swing.app.bag;
 
 import lombok.Getter;
+import xianzhan.frame.ui.swing.app.bag.object.Enemy;
+import xianzhan.frame.ui.swing.app.bag.object.Player;
 
 import java.awt.Canvas;
 import java.awt.Color;
@@ -30,7 +32,8 @@ public class Game extends Canvas implements Runnable {
         handler = new Handler();
         addKeyListener(new KeyInput(handler));
 
-        handler.addObject(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32, ID.PLAYER));
+        handler.addObject(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32));
+        handler.addObject(new Enemy(WIDTH / 2 - 32, HEIGHT / 2 - 32));
     }
 
     public synchronized void start() {
