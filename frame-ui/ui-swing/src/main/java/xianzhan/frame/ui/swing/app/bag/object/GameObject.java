@@ -9,7 +9,7 @@ import java.awt.Graphics;
  * @since 2023-10-28
  */
 @Data
-public abstract class GameObject {
+public abstract class GameObject implements IGameObject {
 
     protected int x;
     protected int y;
@@ -23,7 +23,4 @@ public abstract class GameObject {
         this.y = y;
         this.id = id;
     }
-
-    public abstract void tick();
-    public abstract void render(Graphics g);
 }

@@ -1,7 +1,9 @@
 package xianzhan.frame.ui.swing.app.bag;
 
 import lombok.Getter;
+import lombok.extern.slf4j.Slf4j;
 import xianzhan.frame.ui.swing.app.bag.object.Enemy;
+import xianzhan.frame.ui.swing.app.bag.object.GameObjectHandler;
 import xianzhan.frame.ui.swing.app.bag.object.Player;
 
 import java.awt.Canvas;
@@ -14,6 +16,7 @@ import java.awt.Graphics;
  * @author xianzhan
  * @since 2023-10-28
  */
+@Slf4j
 @Getter
 public class Game extends Canvas implements Runnable {
 
@@ -24,16 +27,16 @@ public class Game extends Canvas implements Runnable {
     private       Thread  thread;
     private       boolean running;
 
-    private final Handler handler;
+    private final GameObjectHandler gameObjectHandler;
 
     public Game() {
         title = "Let's Build a Game!";
 
-        handler = new Handler();
-        addKeyListener(new KeyInput(handler));
+        gameObjectHandler = new GameObjectHandler();
+        addKeyListener(new KeyInput(gameObjectHandler));
 
-        handler.addObject(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32));
-        handler.addObject(new Enemy(WIDTH / 2 - 32, HEIGHT / 2 - 32));
+        gameObjectHandler.getObjectList().add(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32));
+        gameObjectHandler.getObjectList().add(new Enemy(WIDTH / 2 - 32, HEIGHT / 2 - 32));
     }
 
     public synchronized void start() {
@@ -46,7 +49,7 @@ public class Game extends Canvas implements Runnable {
         try {
             thread.join();
         } catch (Exception e) {
-            e.printStackTrace();
+            log.error("Game - stop: 游戏停止异常.", e);
         }
     }
 
@@ -93,16 +96,17 @@ public class Game extends Canvas implements Runnable {
 
         Graphics g = bufferStrategy.getDrawGraphics();
 
+        // 设置背景
         g.setColor(Color.BLACK);
         g.fillRect(0, 0, WIDTH, HEIGHT);
 
-        handler.render(g);
+        gameObjectHandler.render(g);
 
         g.dispose();
         bufferStrategy.show();
     }
 
     private void tick() {
-        handler.tick();
+        gameObjectHandler.tick();
     }
 }

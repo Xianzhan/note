@@ -1,6 +1,7 @@
 package xianzhan.frame.ui.swing.app.bag;
 
 import xianzhan.frame.ui.swing.app.bag.object.GameObject;
+import xianzhan.frame.ui.swing.app.bag.object.GameObjectHandler;
 import xianzhan.frame.ui.swing.app.bag.object.ID;
 
 import java.awt.event.KeyAdapter;
@@ -12,10 +13,10 @@ import java.awt.event.KeyEvent;
  */
 public class KeyInput extends KeyAdapter {
 
-    private Handler handler;
+    private final GameObjectHandler gameObjectHandler;
 
-    public KeyInput(Handler handler) {
-        this.handler = handler;
+    public KeyInput(GameObjectHandler gameObjectHandler) {
+        this.gameObjectHandler = gameObjectHandler;
     }
 
     @Override
@@ -26,7 +27,7 @@ public class KeyInput extends KeyAdapter {
             System.exit(1);
         }
 
-        for (GameObject gameObject : handler.getObjectList()) {
+        for (GameObject gameObject : gameObjectHandler.getObjectList()) {
             if (gameObject.getId() != ID.PLAYER) {
                 return;
             }
@@ -44,7 +45,7 @@ public class KeyInput extends KeyAdapter {
     public void keyReleased(KeyEvent e) {
         int keyCode = e.getKeyCode();
 
-        for (GameObject gameObject : handler.getObjectList()) {
+        for (GameObject gameObject : gameObjectHandler.getObjectList()) {
             if (gameObject.getId() != ID.PLAYER) {
                 return;
             }
