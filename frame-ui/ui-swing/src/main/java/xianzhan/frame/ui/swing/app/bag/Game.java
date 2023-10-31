@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 import xianzhan.frame.ui.swing.app.bag.object.Enemy;
 import xianzhan.frame.ui.swing.app.bag.object.GameObjectHandler;
+import xianzhan.frame.ui.swing.app.bag.object.HUD;
 import xianzhan.frame.ui.swing.app.bag.object.Player;
 
 import java.awt.Canvas;
@@ -28,12 +29,15 @@ public class Game extends Canvas implements Runnable {
     private       boolean running;
 
     private final GameObjectHandler gameObjectHandler;
+    private       HUD               hud;
 
     public Game() {
         title = "Let's Build a Game!";
 
         gameObjectHandler = new GameObjectHandler();
         addKeyListener(new KeyInput(gameObjectHandler));
+
+        hud = new HUD();
 
         gameObjectHandler.getObjectList().add(new Player(WIDTH / 2 - 32, HEIGHT / 2 - 32));
         gameObjectHandler.getObjectList().add(new Enemy(WIDTH / 2 - 32, HEIGHT / 2 - 32));
@@ -55,6 +59,8 @@ public class Game extends Canvas implements Runnable {
 
     @Override
     public void run() {
+        requestFocus();
+
         var lastTime = System.nanoTime();
         var amountOfTicks = 60.0;
         var ns = 1000000000 / amountOfTicks;
@@ -102,11 +108,15 @@ public class Game extends Canvas implements Runnable {
 
         gameObjectHandler.render(g);
 
+        hud.render(g);
+
         g.dispose();
         bufferStrategy.show();
     }
 
     private void tick() {
         gameObjectHandler.tick();
+
+        hud.tick();
     }
 }
