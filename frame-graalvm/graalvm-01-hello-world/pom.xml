@@ -11,4 +11,37 @@
         <artifactId>frame-graalvm</artifactId>
         <version>1.0</version>
     </parent>
+
+    <profiles>
+        <profile>
+            <id>native</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.graalvm.buildtools</groupId>
+                        <artifactId>native-maven-plugin</artifactId>
+                        <version>${native-maven-plugin.version}</version>
+                        <extensions>true</extensions>
+                        <executions>
+                            <execution>
+                                <id>build-native</id>
+                                <goals>
+                                    <goal>build</goal>
+                                </goals>
+                                <phase>package</phase>
+                            </execution>
+                        </executions>
+
+                        <configuration>
+                            <!-- fix: Error: Native-image building on Windows currently only supports target architecture: AMD64 (?? unsupported) -->
+                            <buildArgs>-H:-CheckToolchain</buildArgs>
+                            <!--                            <fallback>false</fallback>-->
+                            <mainClass>xianzhan.frame.graalvm.helloworld.Main</mainClass>
+                            <imageName>hello-world</imageName>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
