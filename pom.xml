@@ -42,6 +42,8 @@
         <module>frame-json</module>
         <module>frame-ui</module>
         <module>frame-ffi</module>
+        <module>frame-graalvm</module>
+        <module>frame-graalvm/graalvm-01-hello-world</module>
     </modules>
 
     <dependencies>
