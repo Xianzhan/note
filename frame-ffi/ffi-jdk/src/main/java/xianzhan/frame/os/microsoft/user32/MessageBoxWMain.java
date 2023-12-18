@@ -19,8 +19,8 @@ public class MessageBoxWMain {
 
     public static void main(String[] args) throws Throwable {
         var linker = Linker.nativeLinker();
-        try (var arean = Arena.ofConfined()) {
-            var user32 = SymbolLookup.libraryLookup("User32", arean);
+        try (var arena = Arena.ofConfined()) {
+            var user32 = SymbolLookup.libraryLookup("User32", arena);
 
             // https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messageboxw
             var messageBoxW_MH = linker.downcallHandle(user32.find("MessageBoxW").get(), FunctionDescriptor.of(
@@ -36,12 +36,12 @@ public class MessageBoxWMain {
             // https://stackoverflow.com/questions/66072117/why-does-windows-use-utf-16le
             var cs = StandardCharsets.UTF_16LE;
             // LPCWSTR lpText = "Hello from Panama! 你好, the world"
-//            var lpText = arean.allocateArray(ValueLayout.JAVA_BYTE,
+//            var lpText = arena.allocateArray(ValueLayout.JAVA_BYTE,
 //                    "Hello from Panama! 你好, the world".getBytes(cs));
-            var lpText = allocateArray(arean, "Hello from Panama! 你好, the world");
+            var lpText = allocateArray(arena, "Hello from Panama! 你好, the world");
             // LPCWSTR lpCaption = "Demo123 你好，世界"
-//            var lpCaption = arean.allocateArray(ValueLayout.JAVA_BYTE, "Demo123 你好，世界".getBytes(cs));
-             var lpCaption = allocateArray(arean, "Demo123 你好，世界");
+//            var lpCaption = arena.allocateArray(ValueLayout.JAVA_BYTE, "Demo123 你好，世界".getBytes(cs));
+             var lpCaption = allocateArray(arena, "Demo123 你好，世界");
 
             var MB_OK = 0x0; // UINT uType = MB_OK
 
