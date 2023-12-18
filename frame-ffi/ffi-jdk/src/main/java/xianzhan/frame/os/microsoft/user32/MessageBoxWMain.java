@@ -36,11 +36,12 @@ public class MessageBoxWMain {
             // https://stackoverflow.com/questions/66072117/why-does-windows-use-utf-16le
             var cs = StandardCharsets.UTF_16LE;
             // LPCWSTR lpText = "Hello from Panama! 你好, the world"
-            var lpText = arean.allocateArray(ValueLayout.JAVA_BYTE,
-                    "Hello from Panama! 你好, the world".getBytes(cs));
+//            var lpText = arean.allocateArray(ValueLayout.JAVA_BYTE,
+//                    "Hello from Panama! 你好, the world".getBytes(cs));
+            var lpText = allocateArray(arean, "Hello from Panama! 你好, the world");
             // LPCWSTR lpCaption = "Demo123 你好，世界"
-            var lpCaption = arean.allocateArray(ValueLayout.JAVA_BYTE, "Demo123 你好，世界".getBytes(cs));
-            // var lpCaption = allocateArray(arean, "Demo123 你好，世界");
+//            var lpCaption = arean.allocateArray(ValueLayout.JAVA_BYTE, "Demo123 你好，世界".getBytes(cs));
+             var lpCaption = allocateArray(arean, "Demo123 你好，世界");
 
             var MB_OK = 0x0; // UINT uType = MB_OK
 
@@ -51,11 +52,13 @@ public class MessageBoxWMain {
 
     private static MemorySegment allocateArray(Arena arena, String str) {
         var bs = str.getBytes(StandardCharsets.UTF_16LE);
-        var ms = arena.allocate(bs.length + 1);
+        var ms = arena.allocate(bs.length + 2);
         var i = 0;
         for (; i < bs.length; i++) {
             ms.set(ValueLayout.JAVA_BYTE, i, bs[i]);
         }
+        // fix: 乱码 UTF_16LE 双字节
+        ms.set(ValueLayout.JAVA_BYTE, i++, (byte) '\0');
         ms.set(ValueLayout.JAVA_BYTE, i, (byte) '\0');
 
         return ms;
