@@ -15,7 +15,7 @@ import java.lang.foreign.ValueLayout;
  */
 public class MessageBoxWMain {
 
-    public static void main(String[] args) throws Throwable {
+    public static void main() throws Throwable {
         try (var arena = Arena.ofConfined()) {
             // https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-messageboxw
             var messageBoxW_MH = User32.find("MessageBoxW", FunctionDescriptor.of(

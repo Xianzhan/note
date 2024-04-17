@@ -14,7 +14,7 @@ import static xianzhan.note.os.windows.util.StrUtil.L;
  */
 public class FindWindowWMain {
 
-    public static void main(String[] args) throws Throwable {
+    public static void main() throws Throwable {
         // https://learn.microsoft.com/zh-cn/windows/win32/api/winuser/nf-winuser-findwindoww
         MethodHandle findWindowW_MH = User32.find("FindWindowW", FunctionDescriptor.of(
                 // 返回值

@@ -10,7 +10,7 @@ import java.awt.Frame;
  */
 public class AWTMain {
 
-    public static void main(String[] args) {
+    public static void main() {
         var frame = new Frame("Title");
         frame.setLocation(600, 300);
         frame.setSize(500, 500);

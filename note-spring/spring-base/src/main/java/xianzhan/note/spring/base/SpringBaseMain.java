@@ -11,7 +11,7 @@ import xianzhan.note.spring.base.service.IBaseService;
  */
 public class SpringBaseMain {
 
-    public static void main(String[] args) {
+    public static void main() {
         // 扫描 Main 类包下的 Bean 对象
         var context = new AnnotationConfigApplicationContext(SpringBaseMain.class.getPackageName());
         var baseService = context.getBean(IBaseService.class);

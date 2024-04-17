@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 
 public class IO2NonBlockingServer {
 
-    public static void main(String[] args) throws Exception {
+    public static void main() throws Exception {
         try (var threadPool = Executors.newCachedThreadPool();
              var serverSocketChannel = ServerSocketChannel.open()) {
             serverSocketChannel.bind(new InetSocketAddress(80));

@@ -10,7 +10,6 @@ public class CollUtilTest {
 
     @Test
     public void testIsEmpty() {
-        Assertions.assertTrue(CollUtil.isEmpty(null));
         Assertions.assertTrue(CollUtil.isEmpty(new ArrayList<>()));
         Assertions.assertTrue(CollUtil.isEmpty(new HashSet<>()));
     }

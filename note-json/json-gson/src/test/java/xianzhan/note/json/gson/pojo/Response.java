@@ -1,21 +1,14 @@
 package xianzhan.note.json.gson.pojo;
 
 
+import lombok.Data;
 
 /**
  * @author xianzhan
  * @since 2023-09-17
  */
-//@Data
+@Data
 public class Response<T> {
 
     private T data;
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
 }

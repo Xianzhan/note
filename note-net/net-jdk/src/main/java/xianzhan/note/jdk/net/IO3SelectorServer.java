@@ -16,7 +16,7 @@ import java.util.Set;
  * @since 2022-12-11
  */
 public class IO3SelectorServer {
-    public static void main(String[] args) throws Exception {
+    public static void main() throws Exception {
         ServerSocketChannel serverSocket = ServerSocketChannel.open();
         serverSocket.bind(new InetSocketAddress(80));
         // 非阻塞

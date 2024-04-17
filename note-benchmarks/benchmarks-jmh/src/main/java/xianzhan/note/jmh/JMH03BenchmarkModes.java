@@ -89,7 +89,7 @@ public class JMH03BenchmarkModes {
         TimeUnit.MILLISECONDS.sleep(100);
     }
 
-    public static void main(String[] args) throws RunnerException {
+    public static void main() throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(JMH03BenchmarkModes.class.getSimpleName())
                 .forks(1)

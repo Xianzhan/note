@@ -64,7 +64,7 @@ public class JMH02WarmupMeasurement {
 
     }
 
-    public static void main(String[] args) throws RunnerException {
+    public static void main() throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(JMH02WarmupMeasurement.class.getSimpleName())
                 .forks(1)

@@ -63,7 +63,7 @@ public class JMH01Hello {
 
     }
 
-    public static void main(String[] args) throws RunnerException {
+    public static void main() throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(JMH01Hello.class.getSimpleName())
                 .forks(1)

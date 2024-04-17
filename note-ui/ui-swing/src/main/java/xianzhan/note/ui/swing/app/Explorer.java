@@ -109,7 +109,7 @@ public final class Explorer extends JPanel {
         }
     }
 
-    public static void main(String[] args) throws Exception {
+    public static void main() throws Exception {
         SwingUtilities.invokeAndWait(new ExplorerJFrame("Explorer"));
     }
 }

@@ -46,7 +46,7 @@ public class JMH04States {
         state.x++;
     }
 
-    public static void main(String[] args) throws RunnerException {
+    public static void main() throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(JMH04States.class.getSimpleName())
                 .threads(4)

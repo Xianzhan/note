@@ -12,7 +12,7 @@ import javax.swing.SwingUtilities;
 @Slf4j
 public class SwingMain {
 
-    public static void main(String[] args) {
+    public static void main() {
 
         try {
             SwingUtilities.invokeAndWait(new MainJFrame());

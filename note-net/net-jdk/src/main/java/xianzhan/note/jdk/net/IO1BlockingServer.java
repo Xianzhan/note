@@ -19,7 +19,7 @@ import java.util.concurrent.Executors;
  */
 public class IO1BlockingServer {
 
-    public static void main(String[] args) throws IOException {
+    public static void main() throws IOException {
         try (ExecutorService threadPool = Executors.newCachedThreadPool();
              var serverSocket = new ServerSocket(80)
         ) {

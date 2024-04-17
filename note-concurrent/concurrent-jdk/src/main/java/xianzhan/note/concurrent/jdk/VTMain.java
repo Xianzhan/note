@@ -2,7 +2,7 @@ package xianzhan.note.concurrent.jdk;
 
 public class VTMain {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main() throws InterruptedException {
         Runnable r = () -> {
             Thread vt = Thread.currentThread();
             System.out.println(vt);

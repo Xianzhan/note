@@ -12,7 +12,7 @@ public class ScopedValueTest {
 
     // --enable-preview --add-modules jdk.incubator.concurrent
 
-    public static void main(String[] args) throws Exception {
+    public static void main() throws Exception {
         String result = ScopedValue.where(KEY, "ABC")
                 .call(() -> {
                     // true

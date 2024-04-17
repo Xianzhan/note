@@ -48,7 +48,7 @@ public class JMH05DefaultStatesUpDown {
         x++;
     }
 
-    public static void main(String[] args) throws RunnerException {
+    public static void main() throws RunnerException {
         Options opt = new OptionsBuilder()
                 .include(JMH05DefaultStatesUpDown.class.getSimpleName())
                 .forks(1)

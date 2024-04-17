@@ -6,8 +6,8 @@ package xianzhan.note.ui.swing.app.bag;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main() {
         var game = new Game();
-        var window = new Window(game);
+        var _ = new Window(game);
     }
 }
