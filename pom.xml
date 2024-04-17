@@ -6,10 +6,10 @@
     <modelVersion>4.0.0</modelVersion>
     <packaging>pom</packaging>
 
-    <groupId>xianzhan.frame</groupId>
-    <artifactId>frame</artifactId>
+    <groupId>xianzhan</groupId>
+    <artifactId>note</artifactId>
     <version>1.0</version>
-    <url>https://github.com/Xianzhan/frame</url>
+    <url>https://github.com/Xianzhan/note</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -33,17 +33,16 @@
     </properties>
 
     <modules>
-        <module>frame-log</module>
-        <module>frame-net</module>
-        <module>frame-base</module>
-        <module>frame-benchmarks</module>
-        <module>frame-concurrent</module>
-        <module>frame-spring</module>
-        <module>frame-json</module>
-        <module>frame-ui</module>
-        <module>frame-ffi</module>
-        <module>frame-graalvm</module>
-        <module>frame-graalvm/graalvm-01-hello-world</module>
+        <module>note-base</module>
+        <module>note-benchmarks</module>
+        <module>note-concurrent</module>
+        <module>note-ffm</module>
+        <module>note-graalvm</module>
+        <module>note-json</module>
+        <module>note-log</module>
+        <module>note-net</module>
+        <module>note-spring</module>
+        <module>note-ui</module>
     </modules>
 
     <dependencies>
