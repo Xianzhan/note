@@ -11,7 +11,7 @@
     </modules>
 
     <parent>
-        <groupId>xianzhan</groupId>
+        <groupId>xianzhan.note</groupId>
         <artifactId>note</artifactId>
         <version>1.0</version>
     </parent>

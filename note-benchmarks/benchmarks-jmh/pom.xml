@@ -6,7 +6,7 @@
     <packaging>jar</packaging>
 
     <parent>
-        <groupId>xianzhan</groupId>
+        <groupId>xianzhan.note</groupId>
         <artifactId>note-benchmarks</artifactId>
         <version>1.0</version>
     </parent>
