@@ -33,6 +33,7 @@
     </properties>
 
     <modules>
+        <module>note-algorithm</module>
         <module>note-base</module>
         <module>note-benchmarks</module>
         <module>note-concurrent</module>
