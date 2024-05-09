@@ -1,5 +1,6 @@
 package xianzhan.note.algorithm.sort;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
@@ -32,6 +33,10 @@ public class SorterTest {
 
         System.out.println(Arrays.toString(unsorted));
         System.out.println(Arrays.toString(sorted));
+
+        var javaSorted = unsorted.clone();
+        Arrays.sort(javaSorted);
+        Assertions.assertArrayEquals(javaSorted, sorted);
     }
 
     @Test
