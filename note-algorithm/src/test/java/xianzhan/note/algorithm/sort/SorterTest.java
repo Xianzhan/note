@@ -48,4 +48,9 @@ public class SorterTest {
     public void testSelect() {
         test(Sorter::select);
     }
+
+    @Test
+    public void testInsert() {
+        test(Sorter::insert);
+    }
 }

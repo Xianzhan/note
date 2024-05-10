@@ -44,4 +44,23 @@ public class Sorter {
             arr[i] = temp;
         }
     }
+
+    /**
+     * 插入排序
+     *
+     * @param arr 待排序数组
+     */
+    public static void insert(int[] arr) {
+        for (var i = 0; i < arr.length - 1; i++) {
+            var cur = arr[i + 1];
+            var curI = i;
+            while (curI >= 0 && cur < arr[curI]) {
+                // 比当前值大的往后移位
+                arr[curI + 1] = arr[curI];
+                curI--;
+            }
+            // 插入
+            arr[curI + 1] = cur;
+        }
+    }
 }
