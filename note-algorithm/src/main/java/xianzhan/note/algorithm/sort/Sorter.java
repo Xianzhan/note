@@ -63,4 +63,28 @@ public class Sorter {
             arr[curI + 1] = cur;
         }
     }
+
+    /**
+     * 希尔排序
+     *
+     * @param arr 待排序数组
+     */
+    public static void shell(int[] arr) {
+        var len = arr.length;
+        // 重点，分步的插入排序
+        var gap = len / 2;
+        while (gap > 0) {
+            for (var i = 0; i < len; i++) {
+                var temp = arr[i];
+                var preI = i - gap;
+                while (preI >= 0 && arr[preI] > temp) {
+                    arr[preI + gap] = arr[preI];
+                    preI -= gap;
+                }
+                arr[preI + gap] = temp;
+            }
+
+            gap /= 2;
+        }
+    }
 }

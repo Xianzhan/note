@@ -53,4 +53,9 @@ public class SorterTest {
     public void testInsert() {
         test(Sorter::insert);
     }
+
+    @Test
+    public void testShell() {
+        test(Sorter::shell);
+    }
 }
