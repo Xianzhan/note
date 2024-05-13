@@ -15,10 +15,11 @@
 
     <modules>
         <module>ui-awt</module>
+        <module>ui-console</module>
         <module>ui-swing</module>
     </modules>
 
     <properties>
-        <javafx.version>20</javafx.version>
+
     </properties>
 </project>

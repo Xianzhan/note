@@ -19,7 +19,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>xianzhan</groupId>
+            <groupId>xianzhan.note</groupId>
             <artifactId>note-base</artifactId>
             <version>1.0</version>
         </dependency>
