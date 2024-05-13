@@ -12,6 +12,10 @@
         <version>1.0</version>
     </parent>
 
+    <modules>
+        <module>graalvm-01-hello-world</module>
+    </modules>
+
     <properties>
         <native-maven-plugin.version>0.9.28</native-maven-plugin.version>
     </properties>
