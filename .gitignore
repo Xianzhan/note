@@ -29,6 +29,9 @@ hs_err_pid*
 # Eclipse
 */.settings
 
+# vs code
+.vscode
+
 # Maven
 **/target
 
