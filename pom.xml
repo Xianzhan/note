@@ -36,7 +36,6 @@
         <module>note-algorithm</module>
         <module>note-base</module>
         <module>note-benchmarks</module>
-        <module>note-ffm</module>
         <module>note-graalvm</module>
         <module>note-json</module>
         <module>note-log</module>
