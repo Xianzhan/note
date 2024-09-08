@@ -37,7 +37,6 @@
         <module>note-base</module>
         <module>note-benchmarks</module>
         <module>note-json</module>
-        <module>note-log</module>
         <module>note-net</module>
         <module>note-spring</module>
     </modules>
