@@ -40,7 +40,6 @@
         <module>note-log</module>
         <module>note-net</module>
         <module>note-spring</module>
-        <module>note-ui</module>
     </modules>
 
     <dependencies>
