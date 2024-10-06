@@ -50,11 +50,10 @@ public class StrUtilTest {
     public void testStr() {
         var i = 10;
         var s = "abc";
-        var str = STR. "i: \{ i }, s: \{ s }" ;
+        var str = "i: %d, s: %s".formatted(i, s);
         Assertions.assertEquals("i: 10, s: abc", str);
 
-        str = STR. """
-                i:\{ i },s:\{ s }""" ;
+        str = "i:%d,s:%s".formatted(i, s);
         Assertions.assertEquals("i:10,s:abc", str);
     }
 }
