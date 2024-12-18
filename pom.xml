@@ -38,6 +38,7 @@
         <module>note-benchmarks</module>
         <module>note-json</module>
         <module>note-data</module>
+        <module>note-net</module>
     </modules>
 
     <dependencies>
