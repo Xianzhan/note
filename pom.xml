@@ -39,6 +39,7 @@
         <module>note-json</module>
         <module>note-data</module>
         <module>note-net</module>
+        <module>note-cache</module>
     </modules>
 
     <dependencies>
